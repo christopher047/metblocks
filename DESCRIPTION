@@ -1,0 +1,23 @@
+Package: metblocks
+Title: Metblocks: An unsupervised method for the analysis of whole genome bisulfite sequencing data
+Version: 0.1
+Authors@R: 
+    person("Christopher", "Fenton", email="christopher.fenton@uit.no", role = c("aut", "cre")) 
+Description: 
+	Metblocks is a R script that isolates variable methylated regions from whole genome bisulfite sequencing (WGBS) data without sample group information.  
+	Use cases include single group analysis or where there is considerable variation between samples. 
+	An unsupervised approach allows for the isolation of subgroups or individual samples of interest that are often overlooked in group comparisons.
+License: mit_license()
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+	impute (>= 1.76.0), 
+	GenomicRanges (>= 1.54.1), 
+	parallel (>= 4.3.1),
+	data.table (>= 1.14.8) 
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
