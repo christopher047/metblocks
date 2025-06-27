@@ -4,7 +4,7 @@
 library(devtools)   
 library(GenomicRanges)   
 install_github("christopher047/metblocks")  
-library metblocks    
+library(metblocks)    
 
 # Run metblocks on sample data chr18
 input_dir <- file.path(system.file("extdata", package="metblocks"), "")   
