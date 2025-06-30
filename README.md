@@ -19,10 +19,10 @@ segs   <- getResultSegs(chr18) #Grange list of segments
 
 # Saving Results
 
-temp_block           <- data.frame(blocks)
-rownames(temp_block) <- names(blocks)
-blocks               <- temp_block
-index                <- data.frame(index)
-rownames(index)      <- paste0(index$seqnames, ".", index$start)
-segs                 <- data.frame(apply(data.frame(segs), 2, as.character))
+temp_block           <- data.frame(blocks)  
+rownames(temp_block) <- names(blocks)  
+blocks               <- temp_block  
+index                <- data.frame(index)  
+rownames(index)      <- paste0(index$seqnames, ".", index$start)  
+segs                 <- data.frame(apply(data.frame(segs), 2, as.character))  
 
