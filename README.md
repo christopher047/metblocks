@@ -8,7 +8,7 @@ library(metblocks)
 
 # Run metblocks on sample data chr18
 library(GenomicRanges)  
-library(metblocks) 
+library(metblocks)   
 input_dir <- file.path(system.file("extdata", package="metblocks"), "")   
 achr <- "chr18"  
 chr18 <- runChromosome(achr=achr, input_dir=input_dir)   
