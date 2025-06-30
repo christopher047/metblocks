@@ -14,10 +14,10 @@ achr <- "chr18"
 chr18 <- runChromosome(achr=achr, input_dir=input_dir)   
 
 # Results 
-blocks <- getResultBlocks(chr18) #GRanges list of variable methylated regions or blocks     
-index  <- getResultIndices(chr18) #Index of CpG sites, blocks, and additional stats     
-mat    <- getResultMatrices(chr18) #The imputed matrix    
-segs   <- getResultSegs(chr18) #Grange list of segments   
+blocks <- chr18$blocks #GRanges list of variable methylated regions or blocks       
+index  <- chr18$index #Index of CpG sites, blocks, and additional stats       
+mat    <- chr18$m2 #The imputed matrix      
+segs   <- chr18$segs #Grange list of segments     
 
 # Saving Results
 
