@@ -38,7 +38,7 @@ cat("standard paramaters \n")
 chr18 <- runChromosome(achr, input_dir, min.seg, bwd, min.block, hclust, iqr_cutoff, nb, ncores)   
 someResults(chr18$blocks)   
 
-### Bandwidth 
+### Bandwidth (bwd) 
 
 ### smaller bandwidth gives smaller blocks more densely packed with cpgs 
 cat("\n changing bandwidth to 150  \n")  
@@ -50,7 +50,7 @@ cat("\n changing bandwidth to 500\n")
 chr18 <- runChromosome(achr, input_dir, min.seg, bwd=500, min.block, hclust, iqr_cutoff, nb, ncores)   
 someResults(chr18$blocks)
 
-### Hclust
+### Hclust (hclust)
 
 ### larger hclust gives more blocks that are less variable
 cat("\n changing hclust to 0.4\n")   
@@ -62,14 +62,14 @@ cat("\n changing hclust to 0.2\n")
 chr18 <- runChromosome(achr, input_dir, min.seg, bwd, min.block, hclust=0.2, iqr_cutoff, nb, ncores)  
 someResults(chr18$blocks)  
 
-### Min.block
+### Min.block (min.block)
 
 ### increasing min.block gives fewer blocks with more cpg sites
 cat("\n changing min.block to 10\n")  
 chr18 <- runChromosome(achr, input_dir, min.seg, bwd, min.block=10, hclust, iqr_cutoff, nb, ncores)  
 someResults(chr18$blocks)  
 
-### Min.seg  
+### Min.seg (min.seg) 
 
 ### increasing min.seg will give larger segments with more cpg sites 
 cat("\n changing min.seg to 40\n")  
