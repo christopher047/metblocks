@@ -3,10 +3,12 @@
 This package finds regions of variable methylation without group information. Package provides flexible parameters for finding small, large, densely packed, ... variably methylated regions called blocks. Package returns a list of blocks, imputed relative methylation matrix, and index to map blocks to matrix  
 
 ## installation
+```R
 #library(devtools)   
 #library(GenomicRanges)   
 #install_github("christopher047/metblocks")  
 #library(metblocks) 
+```
 
 ## Run metblocks on sample data chr18
 library(GenomicRanges)  
