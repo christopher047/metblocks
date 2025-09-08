@@ -11,10 +11,12 @@ This package finds regions of variable methylation without group information. Pa
 ```
 
 ## Run metblocks on sample data chr18
+```R
 library(GenomicRanges)  
 library(metblocks)   
-
+```
 ### return number of blocks, mean width in basepairs, number of cpgs, and cpg density per block
+```R
 someResults <- function(blocks)  
         {  
         cat("number of blocks", length(blocks), "\n")  
@@ -22,9 +24,9 @@ someResults <- function(blocks)
         cat("mean number of cpgs per block", mean(blocks$L), "\n")  
         cat("cpgs per bp", round(mean(blocks$L)/mean(width(blocks)),3), "\n")  
         }   
-
+```
 ### for parameter explanation see ?runChromosome
-
+```R
 achr = "chr18"  
 input_dir = file.path(system.file("extdata", package="metblocks"), "")   
 min.seg = 20  
@@ -34,55 +36,63 @@ hclust = 0.3
 iqr_cutoff = 10  
 nb = 5  
 ncores = 16  
-
+```
 ### paramaters used in paper 
+```R
 cat("standard paramaters \n")   
 chr18 <- runChromosome(achr, input_dir, min.seg, bwd, min.block, hclust, iqr_cutoff, nb, ncores)   
 someResults(chr18$blocks)   
-
+```
 ### Bandwidth (bwd) 
-
+```R
 ### smaller bandwidth gives smaller blocks more densely packed with cpgs 
 cat("\n changing bandwidth to 150  \n")  
 chr18 <- runChromosome(achr, input_dir, min.seg, bwd=150, min.block, hclust, iqr_cutoff, nb, ncores)   
 someResults(chr18$blocks) 
-
+```
 ### larger bandwidth gives larger blocks less densely packed with cpgs 
+```R
 cat("\n changing bandwidth to 500\n")   
 chr18 <- runChromosome(achr, input_dir, min.seg, bwd=500, min.block, hclust, iqr_cutoff, nb, ncores)   
 someResults(chr18$blocks)
-
+```
 ### Hclust (hclust)
 
 ### larger hclust gives more blocks that are less variable
+```R
 cat("\n changing hclust to 0.4\n")   
 chr18 <- runChromosome(achr, input_dir, min.seg, bwd, min.block, hclust=0.4, iqr_cutoff, nb,   ncores)   
 someResults(chr18$blocks)  
-
+```
 ### larger hclust gives fewer blocks that are more variable
+```R
 cat("\n changing hclust to 0.2\n")  
 chr18 <- runChromosome(achr, input_dir, min.seg, bwd, min.block, hclust=0.2, iqr_cutoff, nb, ncores)  
 someResults(chr18$blocks)  
-
+```
 ### Min.block (min.block)
 
 ### increasing min.block gives fewer blocks with more cpg sites
+```R
 cat("\n changing min.block to 10\n")  
 chr18 <- runChromosome(achr, input_dir, min.seg, bwd, min.block=10, hclust, iqr_cutoff, nb, ncores)  
 someResults(chr18$blocks)  
-
+```
 ### Min.seg (min.seg) 
 
 ### increasing min.seg will give larger segments with more cpg sites 
+```R
 cat("\n changing min.seg to 40\n")  
 chr18 <- runChromosome(achr, input_dir, min.seg=40, bwd, min.block, hclust, iqr_cutoff, nb, ncores)    
 someResults(chr18$blocks)  
+```
 
-
-## Results 
+## Results
+```R 
 blocks  <- chr18$blocks  #GRanges list of variable methylated regions or blocks         
 index   <- chr18$index   #Index of CpG sites, blocks, and additional stats         
 mat     <- chr18$m2      #The imputed matrix as data.frame       
-segs    <- chr18$segs    #List of CpG sites in each segment    
+segs    <- chr18$segs    #List of CpG sites in each segment
+```
 raw_cov <- chr18$raw_cov #Number of reads per cite as a data.frame     
 
