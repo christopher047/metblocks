@@ -1,6 +1,6 @@
 
 ## metblocks
-This package finds regions of variable methylation without group information. Package provides flexible parameters for finding small, large, densely packed, ... variably methylated regions called blocks. Package returns a list of blocks, imputed relative methylation matrix, and index to map blocks to matrix  
+This package finds regions of variable methylation (VMRs) without group information. Package provides flexible parameters for finding small, large, densely packed, ... variably methylated regions called blocks. Package returns a list of blocks, imputed relative methylation matrix, and index to map blocks to matrix  
 
 ## installation
 ```R
